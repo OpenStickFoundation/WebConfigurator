@@ -24,8 +24,8 @@ export default function HomePage() {
 			<p>Please select a menu option to proceed.</p>
 			<Section title="Firmware Version">
 				<div className="card-body">
-					<div className="card-text">Current Version: { currentVersion }</div>
-					<div className="card-text">Latest Version: { latestVersion }</div>
+					<div className="card-text">Current Version: {currentVersion}</div>
+					<div className="card-text">Latest Version: {latestVersion}</div>
 					{(latestVersion && currentVersion !== latestVersion) ?
 						<div className="mt-3">
 							<a
@@ -37,7 +37,7 @@ export default function HomePage() {
 								Get Latest Version
 							</a>
 						</div>
-					: null}
+						: null}
 				</div>
 			</Section>
 		</div>

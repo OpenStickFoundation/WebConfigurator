@@ -36,13 +36,13 @@ const defaultValue = {
 let usedPins = [];
 
 const schema = yup.object().shape({
-	brightnessMaximum : yup.number().required().positive().integer().min(0).max(255).label('Max Brightness'),
-	brightnessSteps   : yup.number().required().positive().integer().min(1).max(10).label('Brightness Steps'),
+	brightnessMaximum: yup.number().required().positive().integer().min(0).max(255).label('Max Brightness'),
+	brightnessSteps: yup.number().required().positive().integer().min(1).max(10).label('Brightness Steps'),
 	// eslint-disable-next-line no-template-curly-in-string
-	dataPin           : yup.number().required().min(-1).max(29).test('', '${originalValue} is already assigned!', (value) => usedPins.indexOf(value) === -1).label('Data Pin'),
-	ledFormat         : yup.number().required().positive().integer().min(0).max(3).label('LED Format'),
-	ledLayout         : yup.number().required().positive().integer().min(0).max(2).label('LED Layout'),
-	ledsPerButton      : yup.number().required().positive().integer().min(1).label('LEDs Per Pixel'),
+	dataPin: yup.number().required().min(-1).max(29).test('', '${originalValue} is already assigned!', (value) => usedPins.indexOf(value) === -1).label('Data Pin'),
+	ledFormat: yup.number().required().positive().integer().min(0).max(3).label('LED Format'),
+	ledLayout: yup.number().required().positive().integer().min(0).max(2).label('LED Layout'),
+	ledsPerButton: yup.number().required().positive().integer().min(1).label('LEDs Per Pixel'),
 });
 
 const getLedButtons = (buttonLabels, map, excludeNulls) => {
@@ -162,7 +162,7 @@ export default function LEDConfigPage() {
 								error={errors.ledFormat}
 								isInvalid={errors.ledFormat}
 								onChange={handleChange}
-								>
+							>
 								{LED_FORMATS.map((o, i) => <option key={`ledFormat-option-${i}`} value={o.value}>{o.label}</option>)}
 							</FormSelect>
 							<FormSelect
