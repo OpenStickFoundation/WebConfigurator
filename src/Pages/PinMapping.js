@@ -27,7 +27,7 @@ export default function PinMappingPage() {
 	}, [setButtonMappings, selectedController]);
 
 	const handlePinChange = (e, prop) => {
-		const newMappings = {...buttonMappings};
+		const newMappings = { ...buttonMappings };
 		if (e.target.value)
 			newMappings[prop].pin = parseInt(e.target.value);
 		else
@@ -40,7 +40,7 @@ export default function PinMappingPage() {
 		e.preventDefault();
 		e.stopPropagation();
 
-		let mappings = {...buttonMappings};
+		let mappings = { ...buttonMappings };
 		validateMappings(mappings);
 
 		if (Object.keys(mappings).filter(p => !!mappings[p].error).length) {
